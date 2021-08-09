@@ -6,6 +6,7 @@ class Variebels:
     Guessnumber = 0
     Right_guess = False
     Guessednumber = 50
+    Number = 3
 
 def NumberCreator():
     Variebels.Guessnumber = random.randrange(0,100)
@@ -13,11 +14,23 @@ def NumberCreator():
 
 def NumberGuess():
     if(Variebels.Guessednumber < Variebels.Guessnumber):
-        Variebels.Guessednumber = Variebels.Guessednumber + 1
+
+        if(Variebels.Guessnumber == Variebels.Guessednumber +1):
+            Variebels.Number =  Variebels.Number-2
+        if(Variebels.Guessnumber == Variebels.Guessednumber+2):
+            Variebels.Number = Variebels.number - 1
+
+        Variebels.Guessednumber = Variebels.Guessednumber + Variebels.Number
         print(Variebels.Guessednumber)
  
     if(Variebels.Guessednumber > Variebels.Guessnumber):
-        Variebels.Guessednumber = Variebels.Guessednumber - 1
+
+        if(Variebels.Guessnumber == Variebels.Guessednumber - 1):
+            Variebels.Number =  Variebels.Number+2
+        if(Variebels.Guessnumber == Variebels.Guessednumber-2):
+            Variebels.Number = Variebels.number + 1
+
+        Variebels.Guessednumber = Variebels.Guessednumber - Variebels.Number
         print(Variebels.Guessednumber)
 
     if(Variebels.Guessednumber == Variebels.Guessnumber):
@@ -36,6 +49,7 @@ def main():
         print("alright")
         Variebels.Guessednumber = 50
         Variebels.Right_guess = False
+        Variebels.Number = 3
         main()
     
     print("Alright then see you soon !")
